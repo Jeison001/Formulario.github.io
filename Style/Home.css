@@ -1,0 +1,22 @@
+body {
+    background-image: url('/Resource/fondo.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+}
+
+.titulo {
+    color: #000;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
