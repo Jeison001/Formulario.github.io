@@ -5,54 +5,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/Style/index.css">
+
     
-    <title>Taller</title>
+    <title>PROYECTO NUBE</title>
 
 </head>
 
 <body>
 
-    <div class="contenedor container"> 
+    <div class="contenedor">
 
-        <h2 class="mt-5">¡Iniciar Sesion!</h2> 
-
-        <div class="card p-4"> 
-
-            <h3>Correo electrónico:</h3>
-            
-            <div class="form-group">
-                <input type="text" class="form-control" id="edtemail" placeholder=" "> 
+        <h2>INICIAR SESIÓN</h2>
+        
+        <h3>Correo electrónico:</h3>
+        
+        <input type="text" id="edtemail" placeholder=" "> 
+        
+        <h3>Contraseña</h3>
+        
+        <input type="password" id="edtpassword" placeholder=" "> 
+        
+        <button id="loginbtn" class="button-login" > Iniciar Sesión </button> 
+        
+        <button type="button" id="show-password">Mostrar contraseña</button>
+        
+        <button id="signbtn" class="button-singup" > Registrarse </button>  
+        
+        <div>
+            <div id="g_id_onload" data-client_id="YOUR_GOOGLE_CLIENT_ID" data-login_uri="https://your.domain/your_login_endpoint" data-your_own_param_1_to_login="any_value" data-your_own_param_2_to_login="any_value">
+                <button id="googlebtn" class="button-google" >Google</button> 
             </div>
             
-            <h3>Contraseña</h3>
-            
-            <div class="form-group">
-                <input type="password" class="form-control" id="edtpassword" placeholder=" "> 
-            
-            <button id="loginbtn" class="btn btn-primary btn-block"> Iniciar Sesión </button> 
-
-            <button type="button" id="show-password" class="btn btn-warning btn-block mt-3">Mostrar contraseña</button>
-
-            <button id="signbtn" class="btn btn-outline-primary btn-block mt-3"> Registrarse </button> 
-
-            <div class="mt-3">
-                <div id="g_id_onload" data-client_id="YOUR_GOOGLE_CLIENT_ID" data-login_uri="https://your.domain/your_login_endpoint" data-your_own_param_1_to_login="any_value" data-your_own_param_2_to_login="any_value">
-                    <button id="googlebtn" class="btn btn-danger btn-block"> Google </button>
-                </div>
-                
-                <button type="button" id="facebookbtn" class="btn btn-primary btn-block mt-3">Facebook</button> 
+            <div>
+                <button type="button" id="facebookbtn" class="btn btn-primary">Facebook</button> 
             </div>
-            
-
         </div>
-
+        
     </div>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <script type="module" src="/Controller/autentication.js"></script>
     <script type="module" src="/Controller/authgoogle.js"></script>
@@ -61,4 +51,6 @@
     <script type="module" src="/Controller/vproducts.js"></script>
 
 </body>
+
+
 </html>
