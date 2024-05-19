@@ -9,15 +9,11 @@ async function Agregar(){
     const apellidos = document.getElementById('edtape').value;
     const fecha = document.getElementById('edtfecha').value;
     const cedula = document.getElementById('edtcc').value;
-    const estado = document.getElementById('edtstc').value;
-    const rh = document.getElementById('edtrh').value;
-    const genero = document.getElementById('edtgnr').value;
     const telefono = document.getElementById('edttlf').value;
     const direccion = document.getElementById('edtdirec').value;
     const email = document.getElementById('edtemail').value;
-    const cuenta = document.getElementById('edtfecha').value;
 
-    const verificar = addregister(nombres, apellidos, fecha, cedula, estado, rh, genero, telefono, direccion, email,cuenta)
+    const verificar = addregister(nombres, apellidos, fecha, cedula, telefono, direccion, email)
     const validar = await verificar
 
     .then((validar) => {

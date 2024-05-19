@@ -1,19 +1,25 @@
-import { registerauth, verification } from './firebase.js';
+import { registerauth, verification, addregister } from './firebase.js';
 
 const formulario = document.getElementById('LogUp-Form');
 const boton = document.getElementById('rgsbtn');
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
+const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
 
 async function register() {
-    
+    const nombres = formulario['edtnom'].value;
+    const apellidos = formulario['edtape'].value;
+    const fecha = formulario['edtfecha'].value;
+    const cedula = formulario['edtcc'].value;
+    const telefono = formulario['edttlf'].value;
+    const direccion = formulario['edtdirec'].value;
     const email = formulario['edtemail'].value;
     const psw = formulario['password'].value;
     const confirmEmail = formulario['confirmEmail'].value;
     const confirmPassword = formulario['confirmPassword'].value;
-
-    if (!email || !psw || !confirmEmail || !confirmPassword) {
+    const accountType = formulario['accountType'].value;
+    
+    if (!email || !psw || !confirmEmail || !confirmPassword || !accountType) {
         alert('Por favor completa todos los campos.');
         return;
     }
@@ -33,27 +39,23 @@ async function register() {
         return;
     }
 
-    if (!passwordRegex.test(psw) || !passwordRegex.test(confirmPassword)) {
-        alert('La contraseña debe contener al menos 8 caracteres, incluyendo números, letras minúsculas, mayúsculas y caracteres especiales.');
+    if (!passwordRegex.test(psw)) {
+        alert('La contraseña debe contener al menos 8 caracteres, incluyendo números, letras minúsculas y mayúsculas.');
         return;
     }
 
     try {
-
         const verificar = await registerauth(email, psw);
+
+        await addregister(nombres, apellidos, fecha, cedula, telefono, direccion, email, accountType);
 
         verification();
 
-        alert('Registro exitoso para ' + email + '. Correo de Verificacion ha sido enviado.');
-        const user = verificar.user;
-        window.location.href="/index.html"
-
-
+        alert('Registro exitoso para ' + email + '. Correo de Verificación ha sido enviado.');
+        window.location.href = "/index.html";
     } catch (error) {
-
         alert('Registro no exitoso para ' + email);
         console.error(error);
-
     }
 }
 

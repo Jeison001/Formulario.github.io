@@ -34,29 +34,22 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-// Métodos de Autenticacion
 
-// Registro de Usario
 export const registerauth = (email, password) =>
   createUserWithEmailAndPassword(auth, email, password)
 
-// Verifacion por correo
 export const verification = () =>
   sendEmailVerification(auth.currentUser)
 
-// Autenticación de usuario
 export const loginauth = (email, password) =>
   signInWithEmailAndPassword(auth, email, password)
 
-// Inicio Sesion Google
 export const googleauth = (provider) =>
   signInWithPopup(auth, provider)
 
-// Inicio Sesion Facebook
 export const facebookauth = (provider) =>
   signInWithPopup(auth, provider)
 
-// Estado del Usuario logeado
 export function userstate(){
   onAuthStateChanged(auth, (user) => {
     if (user) {
@@ -68,22 +61,18 @@ export function userstate(){
   });
 }
 
-// Restablecer contraseña por correo
 export const recoverypass = (email) =>
   sendPasswordResetEmail(auth, email)
 
-// Cerrar sesion del usuario
 export const loginout = () =>
   signOut(auth)
 
-// Eliminar usuario
 export const deleteuser = async (email, password) => {
   try {
     await signInWithEmailAndPassword(auth, email, password);
     const user = auth.currentUser;
     if (user) {
       await authDeleteUser(user);
-      // También eliminar el usuario de la base de datos Firestore
       const userRef = doc(db, "Usuarios", user.uid);
       await deleteDoc(userRef);
       return true;
@@ -97,24 +86,19 @@ export const deleteuser = async (email, password) => {
 
 export { auth };
 
-// Métodos de Firestore Database
 
-// Agregar Datos
-export const addregister = (nombres, apellidos, fecha, cedula, estado, rh, genero, telefono, direccion, email, tipoCuenta) =>
+export const addregister = (nombres, apellidos, fecha, cedula, telefono, direccion, email, tipoCuenta) =>
   addDoc(collection(db, "Usuarios"), {
     nombre: nombres,
     apellido: apellidos,
     fecha: fecha,
     cedula: cedula,
-    estado: estado,
-    rh: rh,
-    genero: genero,
+
     telefono: telefono,
     direccion: direccion,
     email: email,
-    tipoCuenta: tipoCuenta  // Agregamos el nuevo campo tipoCuenta
+    tipoCuenta: tipoCuenta  
   });
 
-// Mostrar productos
 export const viewproducts = () =>
   getDocs(collection(db, "Usuarios"));
