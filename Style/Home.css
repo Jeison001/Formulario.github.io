@@ -1,22 +1,32 @@
 body {
-    background-image: url('/Resource/fondo.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
     font-family: Arial, sans-serif;
+    background-image: url('/Resource/fondo.jpg'); /* Ruta de tu imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.8); /* Color de fondo del cuadrado */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 90vw; /* Ancho máximo del cuadrado */
+    max-height: 90vh; /* Altura máxima del cuadrado */
+    overflow: auto; /* Añadir barra de desplazamiento si el contenido es demasiado grande */
 }
 
 .titulo {
-    color: #000;
+    margin-bottom: 20px;
 }
 
-.btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
-}
-
-.btn-danger {
-    background-color: #dc3545;
-    border-color: #dc3545;
+.btn-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }

@@ -1,45 +1,70 @@
-/* Estilos personalizados */
 body {
-    background-image: url('/Resource/fondo.jpg');
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url("/Resource/fondo.jpg");
     background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    font-family: Arial, sans-serif;
+    background-position: center;
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    background-color: hsla(0, 0%, 100%, 0.521); 
+    padding: 40px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px; 
+    box-shadow: 0 0 10px rgb(255, 0, 0); 
+    color: #FF0000;
 }
 
 
-.card-header {
-    background-color: #dc3545;
-    color: #000000;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    padding: 20px;
-}
 
 .card-body {
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.158); 
-}
-
-.card-body h1 {
-    margin-bottom: 20px;
+    color: #FF0000;
     text-align: center;
-    font-size: 24px;
-    color: #000; 
 }
 
-#resetbtn, #backbtn {
-    background-color: #dc3545; 
-    border-color: #dc3545; 
-    color: #fff; 
-    display: block;
-    margin: 0 auto; 
-    margin-top: 10px; 
-    width: 200px; 
+.card-title {
+    color: #FF0000;
 }
 
-#resetbtn:hover {
-    background-color: #c82333; 
-    border-color: #bd2130; 
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #FF0000;
+    border-radius: 5px; 
+    font-size: 16px;
+    box-sizing: border-box;
 }
 
+.btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px; 
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #FF0000;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #CC0000;
+}
+
+.btn-secondary {
+    background-color: #FF6666;
+    color: #fff;
+}
+
+.btn-secondary:hover {
+    background-color: #880000;
+}
