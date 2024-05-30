@@ -3,20 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="/Style/Registrarse.css">
-
-    <title>REGISTRARSE</title>
+    <title>Database Registro</title>
 </head>
 
 <body>
-
     <div class="container">
         <div class="row justify-content-center mt-5">
           <div class="col-md-6">
             <div class="card">
               <div class="card-header">
-                <h1 class="text-center">REGISTRARSE</h1>
+                <h1 class="text-center">Registro de Usuario</h1>
               </div>
               <div class="card-body">
                 <form id="LogUp-Form">
@@ -35,6 +32,33 @@
                     <div class="form-group">
                         <h3>Cédula</h3>
                         <input type="text" id="edtcc" class="form-control" placeholder="Ingresa tu número de cédula" required>
+                    </div>
+                    <div class="form-group">
+                        <h3>Estado Civil</h3>
+                        <input type="text" id="edtstc" class="form-control" placeholder="Ingresa tu estado civil" required>
+                    </div>
+                    <div class="form-group">
+                        <h3>Tipo de Sangre [RH]</h3>
+                        <select id="edtrh" class="form-control" required>
+                            <option value="" selected disabled>Selecciona tu tipo de sangre [RH]</option>
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <h3>Género</h3>
+                        <select id="edtgnr" class="form-control" required>
+                            <option value="" selected disabled>Selecciona tu género</option>
+                            <option value="Masculino">Masculino</option>
+                            <option value="Femenino">Femenino</option>
+                            <option value="Otro">Otro</option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <h3>Teléfono</h3>
@@ -65,7 +89,6 @@
                     </div>
                     <div class="alert alert-danger d-none" id="confirmPasswordAlert" role="alert">Por favor confirma tu contraseña.</div>
 
-                    <!-- Nuevo formulario para tipo de cuenta -->
                     <div class="form-group">
                         <h3>Tipo de Cuenta</h3>
                         <select id="accountType" class="form-control" required>
@@ -92,17 +115,14 @@
 
     <script>
         const telefonoInput = document.getElementById('edttlf');
-
         telefonoInput.addEventListener('input', function() {
             this.value = this.value.replace(/[^\d]/g, '');
         });
 
         const cedulaInput = document.getElementById('edtcc');
-
         cedulaInput.addEventListener('input', function() {
             this.value = this.value.replace(/[^\d]/g, '');
         });
     </script>
-
 </body>
 </html>
